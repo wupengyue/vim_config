@@ -130,3 +130,4 @@ nmap  <F5> <Plug>LookupFile<cr>
 nmap  <F9> :call RunShell("Generate tags", "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .")<cr>
 
 ```
+3. run :PluginInstall in vim command model
