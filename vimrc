@@ -14,15 +14,13 @@ Plugin 'tpope/vim-fugitive'
 " Plugin '插件名称' 实际上是 Plugin 'vim-scripts/插件仓库名' 只是此处的用户名可以省略
 Plugin 'L9'
 Plugin 'bling/vim-airline'
-Plugin 'derekwyatt/vim-scala'
+"Plugin 'derekwyatt/vim-scala'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'godlygeek/tabular'
-Plugin 'moll/vim-node'
-Plugin 'Shougo/neocomplete.vim'
+"Plugin 'moll/vim-node'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'kien/ctrlp.vim'
-Plugin 'fatih/vim-go'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'fatih/vim-go'
 " 你的所有插件需要在下面这行之前
 call vundle#end()            " 必须
 " 忽视插件改变缩进,可以使用以下替代:
@@ -43,12 +41,14 @@ filetype plugin indent on
 " 允许用指定语法高亮配色方案替换默认方案
 syntax on
 " Other settings.
+
 set   autoindent
 set   autoread
 set   autowrite
+"set   background=light
 set   background=dark
 set   backspace=indent,eol,start
-set nobackup
+set   nobackup
 set   cindent
 set   cinoptions=:0
 " 高亮显示当前行/列
@@ -64,7 +64,7 @@ set   hlsearch
 set   ignorecase
 set   incsearch
 set   laststatus=2
-set   mouse=a
+set   mouse=c
 set   number
 set   pumheight=10
 set   ruler
@@ -116,3 +116,4 @@ nmap  <F3> :NERDTreeToggle<cr>
 nmap  <F4> :MRU<cr>
 nmap  <F5> <Plug>LookupFile<cr>
 nmap  <F9> :call RunShell("Generate tags", "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .")<cr>
+set pastetoggle=<F6>

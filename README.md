@@ -3,11 +3,11 @@
 ## Introduction:
 
 
-1. Set up Vundle:
+### 1. Set up Vundle:
 
 `$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
-2. Edit the ~/.vimrc as file vimrc
+### 2. Edit the ~/.vimrc as file vimrc
 
 ```vim
 " To use VIM settings, out of VI compatible mode.
@@ -26,15 +26,13 @@ Plugin 'tpope/vim-fugitive'
 " Plugin '插件名称' 实际上是 Plugin 'vim-scripts/插件仓库名' 只是此处的用户名可以省略
 Plugin 'L9'
 Plugin 'bling/vim-airline'
-Plugin 'derekwyatt/vim-scala'
+"Plugin 'derekwyatt/vim-scala'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'godlygeek/tabular'
-Plugin 'moll/vim-node'
-Plugin 'Shougo/neocomplete.vim'
+"Plugin 'moll/vim-node'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'kien/ctrlp.vim'
-Plugin 'fatih/vim-go'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'fatih/vim-go'
 " 你的所有插件需要在下面这行之前
 call vundle#end()            " 必须
 " 忽视插件改变缩进,可以使用以下替代:
@@ -55,12 +53,14 @@ filetype plugin indent on
 " 允许用指定语法高亮配色方案替换默认方案
 syntax on
 " Other settings.
+
 set   autoindent
 set   autoread
 set   autowrite
+"set   background=light
 set   background=dark
 set   backspace=indent,eol,start
-set nobackup
+set   nobackup
 set   cindent
 set   cinoptions=:0
 " 高亮显示当前行/列
@@ -76,7 +76,7 @@ set   hlsearch
 set   ignorecase
 set   incsearch
 set   laststatus=2
-set   mouse=a
+set   mouse=c
 set   number
 set   pumheight=10
 set   ruler
@@ -128,6 +128,25 @@ nmap  <F3> :NERDTreeToggle<cr>
 nmap  <F4> :MRU<cr>
 nmap  <F5> <Plug>LookupFile<cr>
 nmap  <F9> :call RunShell("Generate tags", "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .")<cr>
+set pastetoggle=<F6>
 
 ```
-3. run :PluginInstall in vim command model
+### 3. how table use
+>| run :PluginInstall in vim command model
+
+### 4. 部分配置说明
+>|`set pastetoggle= <F6>`
+```xml
+在/etc/vim中,修改vimrc,添加 set pastetoggle=<F6> 在黏贴代码之前，进入insert模式，按F9，就可以关闭自动缩进。 当需要自己手写代码的时候，进入insert模式，默认就是自动缩进了。
+```
+>| 'davidhalter/jedi-vim'
+```xml
+Completion <C-Space>
+Goto assignments <leader>g (typical goto function)
+Goto definitions <leader>d (follow identifier as far as possible, includes imports and statements)
+Show Documentation/Pydoc K (shows a popup with assignments)
+Renaming <leader>r
+Usages <leader>n (shows all the usages of a name)
+Open module, e.g. :Pyimport os (opens the os module)
+Documentation (Pydoc) support (with highlighting, Shift+k).
+```
