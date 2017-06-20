@@ -1,4 +1,3 @@
-```vim
 " To use VIM settings, out of VI compatible mode.
 set nocompatible
 filetype off
@@ -117,5 +116,3 @@ nmap  <F3> :NERDTreeToggle<cr>
 nmap  <F4> :MRU<cr>
 nmap  <F5> <Plug>LookupFile<cr>
 nmap  <F9> :call RunShell("Generate tags", "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .")<cr>
-
-```
